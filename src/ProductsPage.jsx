@@ -8,6 +8,8 @@ const StyledDiv = styled.div`
   justify-items: center;
   gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding-top: 2em;
+  background-color: lightgreen;
 `;
 
 function ProductsPage() {

@@ -19,7 +19,7 @@ const StyledBtn = styled.button`
   width: fit-content;
   border: 1px solid black;
   background-color: green;
-  padding: 0.75em;
+  padding: 0.5em;
   border-radius: 20px;
   :visited,
   :link {
@@ -45,7 +45,9 @@ function HomePage() {
         your shopping journey.
       </p>
       <StyledBtn>
-        <Link to="products">Start shopping</Link>
+        <Link to="products" style={{ padding: ".5em" }}>
+          Start shopping
+        </Link>
       </StyledBtn>
     </StyledSection>
   );

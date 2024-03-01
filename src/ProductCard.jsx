@@ -13,6 +13,7 @@ const StyledSection = styled.section`
   grid-template-rows: 300px 1fr;
   align-items: end;
   justify-items: center;
+  background-color: #fff;
 `;
 const StyledImg = styled.img`
   max-width: 100%;
@@ -53,7 +54,6 @@ const StyledInput = styled.p`
   display: grid;
   align-items: center;
 `;
-
 const StyledTextDiv = styled.div`
   display: grid;
   justify-items: center;
