@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: black;
   color: white;
-  margin-bottom: 2em;
+  height: 70px;
 `;
 
 const StyledTitle = styled.h1`
