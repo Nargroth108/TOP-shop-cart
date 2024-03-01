@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   width: 100%;
+  padding: 2em;
+  background-color: lightgreen;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   gap: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding-top: 2em;
-  background-color: lightgreen;
 `;
 
 function ProductsPage() {

@@ -2,18 +2,18 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledSection = styled.section`
-  padding: 1em;
   width: 250px;
   height: 500px;
+  padding: 1em;
+  background-color: #fff;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
   text-align: center;
   display: grid;
   grid-template-rows: 300px 1fr;
-  align-items: end;
   justify-items: center;
-  background-color: #fff;
+  align-items: end;
 `;
 const StyledImg = styled.img`
   max-width: 100%;
@@ -24,18 +24,18 @@ const StyledP = styled.p`
   font-size: 1.5em;
 `;
 const StyledContainer = styled.div`
+  width: 50%;
   display: grid;
   grid-template-columns: 35px 1fr 35px;
   grid-auto-flow: column;
-  width: 50%;
 `;
 const StyledAddBtn = styled.button`
   width: 35px;
   aspect-ratio: 1;
   border: 1px solid black;
+  background-color: green;
   color: white;
   font-size: 1.5em;
-  background-color: green;
   justify-self: end;
   &:hover {
     scale: 1.1;
@@ -45,8 +45,8 @@ const StyledAddBtn = styled.button`
   }
 `;
 const StyledRmvBtn = styled(StyledAddBtn)`
-  justify-self: start;
   background-color: red;
+  justify-self: start;
 `;
 const StyledInput = styled.p`
   border-top: 1px solid black;

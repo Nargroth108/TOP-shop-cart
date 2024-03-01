@@ -2,24 +2,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
+  width: 100%;
+  height: 70px;
+  padding: 1em;
+  background-color: black;
+  color: white;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-items: right;
-  padding: 1em;
-  width: 100%;
-  background-color: black;
-  color: white;
-  height: 70px;
-`;
-const StyledTitle = styled.h1`
-  justify-self: start;
 `;
 const StyledUl = styled.ul`
-  display: flex;
   list-style: none;
-  gap: 5vw;
+  display: flex;
   align-items: center;
+  gap: 5vw;
   :visited,
   :link {
     text-decoration: none;
@@ -40,7 +37,7 @@ const StyledButton = styled.button`
 function NavBar() {
   return (
     <StyledHeader>
-      <StyledTitle>TinyShop</StyledTitle>
+      <h1 style={{ justifySelf: "start" }}>TinyShop</h1>
       <StyledUl>
         <li>
           <Link to="/">Home</Link>

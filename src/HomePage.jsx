@@ -2,25 +2,25 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
+  min-height: calc(100vh - 70px);
   padding: 1em;
   background-color: lightgreen;
-  min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
-  gap: 1em;
   align-items: center;
+  gap: 1em;
 `;
 const StyledTitle = styled.h1`
+  font-size: 2rem;
   display: grid;
   justify-items: center;
-  font-size: 2rem;
 `;
 const StyledBtn = styled.button`
   width: fit-content;
-  border: 1px solid black;
-  background-color: green;
   padding: 0.5em;
+  border: 1px solid black;
   border-radius: 20px;
+  background-color: green;
   :visited,
   :link {
     color: white;
