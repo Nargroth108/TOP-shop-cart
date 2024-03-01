@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+`;
 
 function ProductsPage() {
   const [productData, setProductData] = useState(null);
@@ -7,7 +16,7 @@ function ProductsPage() {
   useEffect(() => {
     const dataFetch = async () => {
       const data = await (
-        await fetch("https://fakestoreapi.com/products?limit=1")
+        await fetch("https://fakestoreapi.com/products")
       ).json();
 
       setProductData(data);
@@ -19,7 +28,13 @@ function ProductsPage() {
 
   if (!productData) return "Loading products...";
 
-  return productData.map((item) => <ProductCard key={item.id} item={item} />);
+  return (
+    <StyledDiv>
+      {productData.map((item) => (
+        <ProductCard key={item.id} item={item} />
+      ))}
+    </StyledDiv>
+  );
 }
 
 export default ProductsPage;
