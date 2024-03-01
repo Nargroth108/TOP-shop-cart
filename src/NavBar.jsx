@@ -12,11 +12,9 @@ const StyledHeader = styled.header`
   color: white;
   height: 70px;
 `;
-
 const StyledTitle = styled.h1`
   justify-self: start;
 `;
-
 const StyledUl = styled.ul`
   display: flex;
   list-style: none;
@@ -34,7 +32,6 @@ const StyledUl = styled.ul`
     scale: 1.2;
   }
 `;
-
 const StyledButton = styled.button`
   border: none;
   background-color: inherit;
