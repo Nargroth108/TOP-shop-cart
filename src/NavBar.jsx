@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: black;
   color: white;
+  margin-bottom: 2em;
 `;
 
 const StyledTitle = styled.h1`
@@ -19,7 +20,7 @@ const StyledTitle = styled.h1`
 const StyledUl = styled.ul`
   display: flex;
   list-style: none;
-  gap: 3em;
+  gap: 5vw;
   align-items: center;
   :visited,
   :link {
@@ -42,7 +43,7 @@ const StyledButton = styled.button`
 function NavBar() {
   return (
     <StyledHeader>
-      <StyledTitle>YesShop</StyledTitle>
+      <StyledTitle>TinyShop</StyledTitle>
       <StyledUl>
         <li>
           <Link to="/">Home</Link>
