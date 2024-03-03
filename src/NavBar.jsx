@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 70px;
   padding: 1em;
+  padding-right: 1.5em;
   background-color: black;
   color: white;
   display: grid;
