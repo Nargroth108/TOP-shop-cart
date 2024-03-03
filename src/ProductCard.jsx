@@ -73,11 +73,21 @@ const StyledCartButton = styled.button`
 function ProductCard({ item }) {
   const cartItems = useStore((state) => state.cartItems);
   const addItem = useStore((state) => state.addItem);
+  const removeItem = useStore((state) => state.removeItem);
   const increaseAmount = useStore((state) => state.increaseItemAmount);
+  const decreaseAmount = useStore((state) => state.decreaseItemAmount);
 
   const amountOfItemInCart = cartItems.filter(
     (cartItem) => cartItem.id === item.id,
   )[0]?.amount;
+
+  function handleDecrease() {
+    if (amountOfItemInCart > 1) {
+      decreaseAmount(item);
+    } else {
+      removeItem(item);
+    }
+  }
 
   return (
     <StyledSection key={item.id}>
@@ -88,7 +98,7 @@ function ProductCard({ item }) {
         <StyledP>{"$ " + item.price}</StyledP>
         {amountOfItemInCart > 0 ? (
           <StyledContainer>
-            <StyledRmvBtn>-</StyledRmvBtn>
+            <StyledRmvBtn onClick={handleDecrease}>-</StyledRmvBtn>
             <StyledInput>{amountOfItemInCart}</StyledInput>
             <StyledAddBtn onClick={() => increaseAmount(item)}>+</StyledAddBtn>
           </StyledContainer>

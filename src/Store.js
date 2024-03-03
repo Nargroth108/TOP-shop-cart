@@ -16,7 +16,7 @@ const useStore = create((set) => ({
 
   removeItem: (item) =>
     set((state) => ({
-      cartItems: [state.cartItems.filter((i) => i === item.id)],
+      cartItems: state.cartItems.filter((cartItem) => cartItem.id !== item.id),
     })),
 
   increaseItemAmount: (item) =>
@@ -25,6 +25,20 @@ const useStore = create((set) => ({
         ...state.cartItems.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, amount: cartItem.amount + 1 }
+            : cartItem,
+        ),
+      ],
+    })),
+
+  decreaseItemAmount: (item) =>
+    set((state) => ({
+      cartItems: [
+        ...state.cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                amount: cartItem.amount - 1,
+              }
             : cartItem,
         ),
       ],
