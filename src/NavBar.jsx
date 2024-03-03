@@ -53,7 +53,7 @@ const StyledDiv = styled.div`
 
 function NavBar() {
   const count = useStore((state) => state.cartItems).length;
-  console.log(count);
+
   return (
     <StyledHeader>
       <h1 style={{ justifySelf: "start" }}>TinyShop</h1>
