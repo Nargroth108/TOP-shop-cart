@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import useStore from "./Store";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -30,11 +31,33 @@ const StyledUl = styled.ul`
   }
 `;
 const StyledButton = styled.button`
+  position: relative;
   border: none;
   background-color: inherit;
+  &&:hover {
+    scale: 1.1;
+  }
+  &&:active {
+    scale: 1.2;
+  }
+`;
+const StyledDiv = styled.div`
+  position: absolute;
+  top: -9px;
+  right: -18px;
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: green;
+  color: white;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 `;
 
 function NavBar() {
+  const count = useStore((state) => state.cartItems).length;
+  console.log(count);
   return (
     <StyledHeader>
       <h1 style={{ justifySelf: "start" }}>TinyShop</h1>
@@ -48,6 +71,7 @@ function NavBar() {
         <li>
           <Link to="cart">
             <StyledButton>
+              <StyledDiv>{count}</StyledDiv>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24"
