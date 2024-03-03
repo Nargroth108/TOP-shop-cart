@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import useStore from "./Store";
 
 const StyledSection = styled.section`
   width: 250px;
@@ -24,9 +25,8 @@ const StyledP = styled.p`
   font-size: 1.5em;
 `;
 const StyledContainer = styled.div`
-  width: 50%;
   display: grid;
-  grid-template-columns: 35px 1fr 35px;
+  grid-template-columns: 35px 50px 35px;
   grid-auto-flow: column;
 `;
 const StyledAddBtn = styled.button`
@@ -60,8 +60,25 @@ const StyledTextDiv = styled.div`
   align-items: center;
   gap: 0.4em;
 `;
+const StyledCartButton = styled.button`
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0.4em;
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+`;
 
 function ProductCard({ item }) {
+  const cartItems = useStore((state) => state.cartItems);
+  const addItem = useStore((state) => state.addItem);
+  const increaseAmount = useStore((state) => state.increaseItemAmount);
+
+  const amountOfItemInCart = cartItems.filter(
+    (cartItem) => cartItem.id === item.id,
+  )[0]?.amount;
+
   return (
     <StyledSection key={item.id}>
       <StyledImg src={item.image} alt="product image" />
@@ -69,11 +86,17 @@ function ProductCard({ item }) {
         <h4>{item.title}</h4>
         <p>{`${item.rating.rate} ⭐ from ${item.rating.count} votes`}</p>
         <StyledP>{"$ " + item.price}</StyledP>
-        <StyledContainer>
-          <StyledRmvBtn>-</StyledRmvBtn>
-          <StyledInput>0</StyledInput>
-          <StyledAddBtn>+</StyledAddBtn>
-        </StyledContainer>
+        {amountOfItemInCart > 0 ? (
+          <StyledContainer>
+            <StyledRmvBtn>-</StyledRmvBtn>
+            <StyledInput>{amountOfItemInCart}</StyledInput>
+            <StyledAddBtn onClick={() => increaseAmount(item)}>+</StyledAddBtn>
+          </StyledContainer>
+        ) : (
+          <StyledCartButton onClick={() => addItem(item)}>
+            Add to cart
+          </StyledCartButton>
+        )}
       </StyledTextDiv>
     </StyledSection>
   );
