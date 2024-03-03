@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
 
-const StyledDiv = styled.div`
+const StyledMain = styled.main`
   width: 100%;
   padding: 2em;
   background-color: lightgreen;
@@ -31,11 +31,11 @@ function ProductsPage() {
   if (!productData) return "Loading products...";
 
   return (
-    <StyledDiv>
+    <StyledMain>
       {productData.map((item) => (
         <ProductCard key={item.id} item={item} />
       ))}
-    </StyledDiv>
+    </StyledMain>
   );
 }
 
