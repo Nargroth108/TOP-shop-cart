@@ -18,15 +18,17 @@ const StyledUl = styled.ul`
   display: flex;
   align-items: center;
   gap: 5vw;
+`;
+const StyledLi = styled.li`
   :visited,
   :link {
     text-decoration: none;
     color: white;
   }
-  :hover {
+  &:hover {
     scale: 1.1;
   }
-  :active {
+  &:active {
     scale: 1.2;
   }
 `;
@@ -34,12 +36,6 @@ const StyledButton = styled.button`
   position: relative;
   border: none;
   background-color: inherit;
-  &&:hover {
-    scale: 1.1;
-  }
-  &&:active {
-    scale: 1.2;
-  }
 `;
 const StyledDiv = styled.div`
   position: absolute;
@@ -62,13 +58,13 @@ function NavBar() {
     <StyledHeader>
       <h1 style={{ justifySelf: "start" }}>TinyShop</h1>
       <StyledUl>
-        <li>
+        <StyledLi>
           <Link to="/">Home</Link>
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Link to="products">Products</Link>
-        </li>
-        <li>
+        </StyledLi>
+        <StyledLi>
           <Link to="cart">
             <StyledButton>
               <StyledDiv>{count}</StyledDiv>
@@ -83,7 +79,7 @@ function NavBar() {
               </svg>
             </StyledButton>
           </Link>
-        </li>
+        </StyledLi>
       </StyledUl>
     </StyledHeader>
   );
