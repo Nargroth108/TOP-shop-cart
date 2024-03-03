@@ -3,6 +3,8 @@ import styled from "styled-components";
 import useStore from "./Store";
 
 const StyledHeader = styled.header`
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 70px;
   padding: 1em;
