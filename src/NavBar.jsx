@@ -52,7 +52,8 @@ const StyledDiv = styled.div`
 `;
 
 function NavBar() {
-  const count = useStore((state) => state.cartItems).length;
+  const cartItems = useStore((state) => state.cartItems);
+  const count = cartItems.reduce((acc, item) => acc + item.amount, 0);
 
   return (
     <StyledHeader>
