@@ -14,21 +14,33 @@ const StyledMain = styled.main`
 
 function ProductsPage() {
   const [productData, setProductData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const dataFetch = async () => {
-      const data = await (
-        await fetch("https://fakestoreapi.com/products")
-      ).json();
+      try {
+        const data = await (
+          await fetch("https://fakestoreapi.com/products")
+        ).json();
 
-      setProductData(data);
-      console.log(data);
+        setProductData(data);
+        setError(null);
+      } catch (err) {
+        setError(err);
+      }
     };
 
     dataFetch();
   }, []);
 
-  if (!productData) return "Loading products...";
+  if (error)
+    return (
+      <p>
+        An error was encountered while trying to fetch products data. <br />
+        Please try refreshing the page!
+      </p>
+    );
+  if (!productData) return <p>Loading products...</p>;
 
   return (
     <StyledMain>
