@@ -39,7 +39,7 @@ const StyledLi = styled.li`
 function NavBar() {
   return (
     <StyledHeader>
-      <h1 style={{ justifySelf: "start" }}>TinyShop</h1>
+      <h2 style={{ justifySelf: "start" }}>TinyShop</h2>
       <StyledUl>
         <StyledLi>
           <Link to="/">Home</Link>

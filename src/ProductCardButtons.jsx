@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledContainer = styled.div`
+  height: 35px;
   display: grid;
   grid-template-columns: 35px 50px 35px;
   grid-auto-flow: column;

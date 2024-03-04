@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledMain = styled.main`
   width: 100%;
-  padding: 2em;
+  padding: 1em;
   background-color: lightgreen;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
