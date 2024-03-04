@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
+width: 100%;
   min-height: calc(100vh - 70px);
   padding: 1em;
   background-color: lightgreen;
