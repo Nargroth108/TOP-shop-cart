@@ -4,7 +4,7 @@ import ProductCardButtons from "./ProductCardButtons";
 
 const StyledSection = styled.section`
   width: 250px;
-  height: 500px;
+  height: 600px;
   padding: 1em;
   background-color: #fff;
   border: 1px solid black;
